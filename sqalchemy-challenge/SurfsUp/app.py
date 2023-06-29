@@ -44,7 +44,7 @@ def welcome():
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
         f"/api/v1.0/tobs<br/>"
-        f"/api/v1.0/<start>"
+        f"/api/v1.0/<start><br/>"
         f"/api/v1.0/<start>/<end>"
     )
 
@@ -93,7 +93,7 @@ def tobs():
         
     return jsonify(activestats)
 
-@app.route("/api/v1.0/<start><br>")
+@app.route("/api/v1.0/<start>")
 def start(start = None, end = None):
 
     sel = [func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)]
